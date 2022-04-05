@@ -16,6 +16,7 @@
     padding: 10px;
     border: 2px solid seagreen;
     margin: 10px;
+    position: fixed;
 }
 .card_left{
     padding: 10px;

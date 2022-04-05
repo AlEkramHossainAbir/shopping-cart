@@ -2,16 +2,18 @@ import React from 'react';
 
 const RightCard = (props) => {
     const {cart} = props;
-    const shippingCost = 15;
-    
+
     let total = 0
     total = cart.reduce((previous,product) =>  previous+ product.price,0)
+
     // for(const products of cart)
     // {
     //     total = total+ products.price
     // }
 
+    const shippingCost = total>0 ? 15 : 0;
     let tax = (total + shippingCost)*10;
+    
     return (
         <div className='right_card'>
             <h1>Order Summary</h1>
