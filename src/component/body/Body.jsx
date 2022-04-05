@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import Card from '../card/Card';
+import Card from '../card/LeftCard';
+import RightCard from '../card/RightCard';
 import './Body.css'
 
 const Body = () => {
     const [items, setItems] = useState([]);
-    const [count,setCount] = useState(0);
+    const [price,setPrice] = useState(0);
+    const [cart, setCart] =useState([]);
     useEffect(()=>{
         fetch('products.json')
         .then(res => res.json())
         .then(data => setItems(data))
     },[])
 
-    const addItem = () =>{
-        setCount(count+1);
-        console.log(count);
+    const addItem = (product) =>{
+        setPrice(product.price)
+        const newCart = [...cart, product]
+        setCart(newCart);
     }
 
     return (
@@ -25,7 +28,9 @@ const Body = () => {
                 }
                 
             </div>
-            <div className='right_body'><h1>This is Body 2</h1></div>
+            <div className='right_body'>
+                <RightCard price={price} cart={cart}/>
+            </div>
         </div>
     );
 };

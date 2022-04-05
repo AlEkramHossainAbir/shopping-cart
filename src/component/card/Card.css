@@ -1,12 +1,29 @@
 .card{
-    background-color: rgb(172, 193, 197);
+    background-color: rgb(204, 188, 191);
     border: 1px solid crimson;
     margin: 10px;
     border-radius: 10px;
-    text-align: center;
     display: flex;
+
 }
 .card_image{
-    height: 220px;
+    height: 50%;
+    width: 100%;
     
+}
+.right_card{
+    background-color: aliceblue;
+    padding: 10px;
+    border: 2px solid seagreen;
+    margin: 10px;
+}
+.card_left{
+    padding: 10px;
+    background-color: azure;
+    width: 100%;
+}
+.card_right{
+    background-color: rgb(218, 196, 164);
+    width: 100%;
+    padding: 10px;
 }

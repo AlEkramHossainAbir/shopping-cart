@@ -3,8 +3,17 @@
     grid-template-columns: 3fr 1fr;
 }
 .left_body{
-    background-color: antiquewhite;
+    background-color: rgb(240, 250, 241);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
 }
 .right_body{
     background-color: beige;
+}
+.cartBtn{
+    background-color: rgb(233, 152, 30);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
 }
