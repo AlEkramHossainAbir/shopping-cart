@@ -45,4 +45,9 @@ const removeFromDb = (id) =>{
     
 }
 
-export {addToDb,removeFromDb}
+const getStoredCard= () =>{
+    const isExist = getDb();
+    return isExist ? JSON.parse(isExist) : {};
+}
+
+export {addToDb,removeFromDb,getStoredCard}

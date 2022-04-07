@@ -1,17 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb } from '../../utilities/fakedb';
+import { addToDb, getStoredCard } from '../../utilities/fakedb';
 import Card from '../card/LeftCard';
 import RightCard from '../card/RightCard';
 import './Body.css'
 
 const Body = () => {
-    const [items, setItems] = useState([]);
-    const [price,setPrice] = useState(0);
-    const [cart, setCart] =useState([]);
+    let [items, setItems] = useState([]);
+    let [price,setPrice] = useState(0);
+    let [cart, setCart] =useState([]);
     useEffect(()=>{
         fetch('products.json')
         .then(res => res.json())
         .then(data => setItems(data))
+    },[])
+
+    useEffect(()=>{
+        const saveCart = getStoredCard();
+        console.log(saveCart)
+        for(const keys in saveCart)
+        {
+            const addedProduct = items.find(product => product.key === keys );
+            console.log(keys, addedProduct)
+        }
+        
     },[])
 
     const addItem = (product) =>{
